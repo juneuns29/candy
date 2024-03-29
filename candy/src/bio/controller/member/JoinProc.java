@@ -1,12 +1,13 @@
 package bio.controller.member;
 
-import java.io.IOException;
+import java.io.*;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
-import bio.controller.CandyInter;
+import bio.controller.*;
+import bio.dao.*;
+import bio.vo.*;
 
 public class JoinProc implements CandyInter {
 
@@ -28,8 +29,18 @@ public class JoinProc implements CandyInter {
 		String avt = req.getParameter("avt");
 		int avatar = Integer.parseInt(avt);
 		
-		// 데이터베이스 작업하고 결과 받고
+		// VO에 데이터 담고
+		MemberVO vo = new MemberVO();
+		vo.setName(name);
+		vo.setId(id);
+		vo.setPw(pw);
+		vo.setMail(mail);
+		vo.setTel(tel);
+		vo.setGen(gen);
+		vo.setAno(avatar);
 		
+		// 데이터베이스 작업하고 결과 받고
+		MemberDao mDao = new MemberDao();
 		// 결과에따라 뷰 처리해주고
 		
 		// 뷰 반환해주고
