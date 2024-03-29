@@ -46,6 +46,10 @@ public class JoinProc implements CandyInter {
 		if(cnt != 1) {
 			// 회원가입에 실패한 경우
 			view = "/member/join.candy";
+		} else {
+			// 회원가입에 성공한 경우
+			// 따라서 로그인 처리를 해준다.
+			req.getSession().setAttribute("SID", id);
 		}
 		
 		// 뷰 반환해주고
