@@ -5,13 +5,6 @@
 <head>
 <title>Join</title>
 <meta charset="UTF-8">
-<c:if test="${not empty SID}">
-	<%-- 
-		이미 로그인 한 경우 
-		메인페이지로 리다이렉트 시킨다.
-	--%>
-	<c:redirect url="/" />
-</c:if>
 <link rel="stylesheet" type="text/css" href="/resources/css/w3.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/user.css">
 <script type="text/javascript" src="/resources/js/jquery-3.7.1.min.js"></script>
@@ -21,7 +14,6 @@
         height: 40px;
     }
 </style>
-
 <script type="text/javascript">
     $(document).ready(function(){
         $('.rdo').change(function(){
@@ -80,7 +72,7 @@
 			$('#idmsg:not(".w3-hide")').addClass('w3-hide');
 
 	        $.ajax({
-	            url: 'http://localhost/member/idCheck.ania',
+	            url: 'http://localhost/member/idCheck.candy',
 	            type: 'POST',
 	            dataType: 'text',
 	            data: {
@@ -119,7 +111,7 @@
 <body>
     <div class="w3-content mxw650">
         <h1 class="w3-blue w3-center w3-padding w3-card-4">회원가입</h1>
-        <form method="GET" action="join_result.jsp" name="frm" id="frm" 
+        <form method="GET" action="/member/joinProc.candy" name="frm" id="frm" 
                 class="w3-col w3-light-grey mgt20 w3-card-4 w3-padding pdh30">
             <div class="w3-col w3-padding">
                 <label for="name" class="w3-col m3 lbl w3-text-gray w3-right-align">이 름 : </label>
@@ -233,13 +225,5 @@
             <div class="w3-button inblock w3-blue btnW1 w3-card-4 btnPd" id="join">회원가입</div>
         </div>
     </div>
-<!-- 
-    <script type="text/javascript">
-        document.getElementById('chkBtn').onclick = function(){
-            document.getElementById('idmsg').setAttribute('class', 'w3-col s9 w3-text-red');
-            document.getElementById('idmsg').innerHTML = '# 이미 사용중인 아이디입니다.';
-        };
-    </script>
--->
 </body>
 </html>

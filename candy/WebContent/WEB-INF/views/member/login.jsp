@@ -11,11 +11,11 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#home').click(function(){
-			$(location).attr('href', '/main.ania');
+			$(location).attr('href', '/main.candy');
 		});
 		
 		$('#join').click(function(){
-			$(location).attr('href', '/member/join.ania');
+			$(location).attr('href', '/member/join.candy');
 		});
 		
 		$('#login').click(function(){
@@ -32,7 +32,7 @@
 				return;
 			}
 			
-			$('#frm').attr('method', 'GET').attr('action', '/member/loginProc.ania');
+			$('#frm').attr('method', 'GET').attr('action', '/member/loginProc.candy');
 			$('#frm').submit();
 		});
 	});
