@@ -41,7 +41,12 @@ public class JoinProc implements CandyInter {
 		
 		// 데이터베이스 작업하고 결과 받고
 		MemberDao mDao = new MemberDao();
+		int cnt = mDao.addMember(vo);
 		// 결과에따라 뷰 처리해주고
+		if(cnt != 1) {
+			// 회원가입에 실패한 경우
+			view = "/member/join.candy";
+		}
 		
 		// 뷰 반환해주고
 		return view;
