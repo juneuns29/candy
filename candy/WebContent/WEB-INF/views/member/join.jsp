@@ -36,9 +36,9 @@
         }
         
         $('#join').click(function(){
-        	var sid = document.frm.id.value;
-        	var spw = document.frm.pw.value;
-        	var srepw = document.frm.repw.value;
+        	var sid = $(document.frm.id).val();
+        	var spw = $(document.frm.pw).val();
+        	var srepw = $(document.frm.repw).val();
         	if(spw != srepw){
         		document.frm.repw.value = '';
         		document.frm.repw.focus();
@@ -164,7 +164,7 @@
                 <div class="w3-col m8">
                     <div class="w3-half w3-center">
                         <input type="radio" name="gen" id="F" 
-                                class="w3-radio rdo" value="F" checked>
+                                class="w3-radio rdo" value="F">
                         <label for="F" class="genlbl w3-text-gray">여 자</label>
                     </div>
                     <div class="w3-half w3-center">

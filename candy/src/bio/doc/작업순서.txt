@@ -1,0 +1,38 @@
+# 프로젝트 사전작업
+	1. 패키지 트리 준비
+		controller
+		dao
+		sql
+		vo
+		db
+		dispatch
+		resources
+		[ util ]
+		
+	2. context.xml을 META-INF 폴더에 만들고 내용을 작성한다.
+	
+	3. db 패키지에 DBCP 클래스를 제작한다.
+	
+	4. 요청처리 클래스들을 상속해줄 Interface 를 준비한다.
+	
+	5. 요청매핑을 할 properties 파일을 resources 패키지에 만든다.
+	
+	6. dispatch Servlet을 제작한다.
+	
+# 요청 처리
+	
+	1. 요청 설계 작성
+	
+	2. 뷰(jsp) 제작
+	
+	3. Controller 틀만 제작
+	
+	4. properties에 요청 매핑을 한다.
+	
+	5. 컨트롤러 내용 작성
+		데이터베이스 처리가 필요한 경우
+			1) 질의명령 작성
+			2) dao 작성하고
+				vo 가 필요하면 vo 작성
+			3) 컨트롤러에서 결과 처리
+	
